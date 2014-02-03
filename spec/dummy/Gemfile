@@ -1,0 +1,8 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.2.16'
+gem 'jquery-rails'
+group :test, :development do
+  gem 'sqlite3'
+  gem 'order_tracker', path: '../../'
+end
