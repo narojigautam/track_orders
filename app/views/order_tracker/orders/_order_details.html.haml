@@ -1,0 +1,26 @@
+.well
+  %h2 Order Details
+  - if notice
+    %p.bg-info= notice
+
+  %dl
+    %dt Number
+    %dd= order.number
+
+  %dl
+    %dt Total
+    %dd= order.total
+
+  %dl
+    %dt Service type
+    %dd= order.service_type.name
+
+  %table.table.table-bordered
+    %tr
+      %th{colspan: "5"}= "Current status of the Order : #{order.human_state_name.capitalize}"
+    %tr
+      %th{:class => ["new", "confirmed", "in_transit", "received_at_facility", "delivered"].include?(order.state) ? 'success' : 'warning'} New
+      %th{:class => ["confirmed", "in_transit", "received_at_facility", "delivered"].include?(order.state) ? 'success' : 'warning'} Confirmed
+      %th{:class => ["in_transit", "received_at_facility", "delivered"].include?(order.state) ? 'success' : 'warning'} In Transit
+      %th{:class => ["received_at_facility", "delivered"].include?(order.state) ? 'success' : 'warning'} Received At Facility
+      %th{:class => ["delivered"].include?(order.state) ? 'success' : 'warning'} Delivered

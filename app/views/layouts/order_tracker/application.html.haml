@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Order Tracker | Track your FedEx and DHL Orders
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+    = stylesheet_link_tag "order_tracker/application", :media => "all"
+    = javascript_include_tag "order_tracker/application"
+    = csrf_meta_tags
+  %body
+    .container
+      .row
+        .col-md-12
+          %ul.list-inline
+            %li= link_to "Home", main_app.root_path
+            %li= link_to "Order Tracker", order_tracker_path
+            %li= link_to "New Order", order_tracker.new_order_path
+      .row
+        = yield

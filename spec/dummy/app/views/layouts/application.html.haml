@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title Pegas Tracking Services
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+    = stylesheet_link_tag "order_tracker/application", :media => "all"
+    = javascript_include_tag "order_tracker/application"
+    = csrf_meta_tags
+  %body
+    .container
+      .row
+        = yield

@@ -1,3 +1,25 @@
 = OrderTracker
 
-This project rocks and uses MIT-LICENSE.
+Track status of your DHL and FedEx Orders.
+
+Order Tracker adds a tracking page to your app, and provides helpers for you to track DHL and FedEx orders.
+
+To Install
+1) Include the Gem in your Gemfile as follows
+gem 'order_tracker'
+
+2) Run Bundle install and add the following line of code to your routes file
+mount OrderTracker::Engine => "/order_tracker"
+
+3) Then create an initializer (initializers/init_order_tracker.rb) with following line of code in it:
+ActionView::Base.send :include, OrderTracker::ApplicationHelper
+
+Use track_your_order helper to either show a button which pops an Order search modal, OR
+pass an Order ID to it, as follows, to directly display order details where you want.
+track_your_order("123snarf")
+
+On the Order Tracker page, to access New Order page, use following credentials
+username: order
+password: tracker
+
+MIT-LICENSE proof.

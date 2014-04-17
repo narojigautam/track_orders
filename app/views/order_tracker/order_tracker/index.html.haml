@@ -1,0 +1,6 @@
+.col-md-8
+  %h1 Track your DHL or FedEx Orders
+  - if notice
+    %p.bg-info= notice
+
+  = render "/order_tracker/orders/find_order_form"

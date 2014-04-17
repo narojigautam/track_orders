@@ -1,0 +1,6 @@
+= form_tag order_tracker.find_orders_path, method: :get, :class => "form-inline" do
+  .form-group
+    %label.sr-only{for: :number} Order ID
+    = text_field_tag :number, "", :class => "form-control", placeholder: "Enter the Order ID"
+
+  = submit_tag "Search", :class => "btn btn-primary"

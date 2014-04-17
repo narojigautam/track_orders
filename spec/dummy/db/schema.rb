@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140202120836) do
+ActiveRecord::Schema.define(:version => 20140417142032) do
 
   create_table "order_tracker_orders", :force => true do |t|
     t.string   "number"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20140202120836) do
     t.integer  "service_type_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "state"
+  end
+
+  create_table "order_tracker_service_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
